@@ -1,13 +1,16 @@
 data:
  build: jenkins-data
+ container_name: jenkins_data
 master:
  build: jenkins-master
+ container_name: jenkins_master
  volumes_from:
   - data
  ports:
   - "50000:50000"
 nginx:
  build: jenkins-nginx
+ container_name: jenkins_nginx
  ports:
   - "80:80"
  links:
